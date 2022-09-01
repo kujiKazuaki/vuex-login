@@ -1,22 +1,16 @@
 <template>
   <div class="allContainer">
-    <button v-on:click="change()">変更</button>
-    <div>{{ this.$store.state.count }}</div>
+    <nav>
+      <router-link to="/"></router-link>
+    </nav>
+    <router-view />
   </div>
 </template>
 
-<script>
-export default {
-  methods: {
-    change() {
-      this.$store.state.count += 1
-    },
-  },
-}
-</script>
+<script></script>
 
 <style scoped>
-.allContainer {
+/* .allContainer {
   border: 2px solid red;
-}
+} */
 </style>
