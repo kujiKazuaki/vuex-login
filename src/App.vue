@@ -1,5 +1,5 @@
 <template>
-  <div class="allContainer">
+  <div class="aallContainer">
     <nav>
       <router-link to="/"></router-link>
     </nav>
