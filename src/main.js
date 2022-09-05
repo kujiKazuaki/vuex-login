@@ -1,7 +1,17 @@
 import { createApp } from "vue"
 import App from "./App.vue"
-import "./firebase.js" // これを追加
-import store from "@/store"
 import router from "./router"
 
-createApp(App).use(router).use(store).mount("#app")
+import "./assets/main.css"
+
+// Firebase authサービスをインポート
+import { projectAuth } from "./firebase/config"
+
+let app
+
+// appに値があるときはappを毎回実行しないようにする
+projectAuth.onAuthStateChanged(() => {
+  if (!app) {
+    app = createApp(App).use(router).mount("#app")
+  }
+})
